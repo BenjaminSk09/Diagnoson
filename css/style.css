@@ -1,0 +1,416 @@
+/* Importar fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --azul-900: #0b254b;
+    --azul-principal: #1f3c88;
+    --azul-50: #f5f7fa;
+    --blanco: #ffffff;
+    --sombra-sm: 0 6px 18px rgba(11, 37, 75, 0.06);
+    --sombra-md: 0 12px 28px rgba(11, 37, 75, 0.12);
+    --sombra-lg: 0 18px 48px rgba(11, 37, 75, 0.18);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--azul-50);
+    color: #333;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.btn-diagnoson {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--azul-principal);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-block;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+    letter-spacing: -0.01em;
+}
+
+.btn-diagnoson:hover,
+.btn-diagnoson:focus {
+    background-color: var(--azul-900);
+    color: white;
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-md);
+    outline: none;
+}
+
+.btn-diagnoson:active {
+    transform: translateY(-3px) scale(0.995);
+}
+
+.btn-feature:hover,
+.btn-feature:focus {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--sombra-lg);
+}
+
+.btn-diagnoson:focus-visible {
+    box-shadow: 0 0 0 4px rgba(31, 60, 136, 0.12);
+}
+
+.btn-primary {
+    background-color: var(--azul-900);
+    color: var(--blanco);
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.btn-primary:hover {
+    background-color: #1e40af;
+    transform: translateY(-4px);
+}
+
+.dept-card {
+    background: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--sombra-sm);
+    transition: transform 0.3s ease;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.dept-card:hover {
+    transform: translateY(-8px);
+}
+
+.dept-card h3 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.dept-icon {
+    width: 64px;
+    height: 64px;
+    background: #ebf0ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--azul-principal);
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.dept-card:hover .dept-icon {
+    background: var(--azul-principal);
+    color: white;
+}
+
+.carousel-slides {
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.7s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.slide[aria-hidden="true"] {
+    opacity: 0;
+}
+
+.slide[aria-hidden="false"] {
+    opacity: 1;
+}
+
+.slide h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.slide p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+}
+
+.indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicators button.active {
+    background: white;
+}
+
+.hamburger {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 6px 8px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 18px;
+    color: #1f2937;
+    display: inline-block;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.hamburger:focus {
+    outline: 2px solid rgba(31, 60, 136, 0.15);
+    outline-offset: 2px;
+}
+
+.hamburger:hover {
+    background: #f8fafc;
+}
+
+.hamburger.active i {
+    color: var(--azul-principal);
+    transform: rotate(90deg);
+}
+
+.mobile-menu {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 40;
+}
+
+.mobile-menu.open {
+    display: block;
+    animation: slideDown 0.18s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-6px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    color: #111827;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.mobile-menu a:hover {
+    background: #f8fafc;
+}
+
+.benefits-wrapper {
+    max-width: 80rem;
+    margin: -2rem auto 0;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 20;
+}
+
+.benefit-item {
+    background-color: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--sombra-sm);
+    border-bottom: 4px solid var(--azul-principal);
+    transition: transform 0.3s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+}
+
+.benefit-icon {
+    color: var(--azul-principal);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.benefit-title {
+    font-weight: 700;
+    color: var(--azul-900);
+    letter-spacing: -0.01em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--azul-900);
+    letter-spacing: -0.02em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.section-subtitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--azul-principal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.section-desc {
+    font-size: 1.125rem;
+    color: #4b5563;
+    line-height: 1.625;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+#form-contacto input,
+#form-contacto select,
+#form-contacto textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+    font-weight: 400;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+#form-contacto input:focus,
+#form-contacto select:focus,
+#form-contacto textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.08);
+    outline: none;
+}
+
+#form-contacto label {
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+nav {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+nav h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+nav a {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+footer {
+    font-weight: 400;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+p, ul li {
+    font-weight: 400;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+@media (max-width: 768px) {
+    header h2 {
+        font-size: 1.5rem;
+    }
+    header p {
+        font-size: 0.95rem;
+    }
+    .max-w-7xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .prev,
+    .next {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    header h2 {
+        font-size: 1.25rem;
+    }
+    .btn-diagnoson {
+        padding: 10px 18px;
+    }
+    .max-w-7xl {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}

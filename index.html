@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnoson - Centro Médico</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Principal">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#inicio" class="inline-block logo-crop" style="height: 40px; width: 120px; overflow: hidden; border-radius: 8px; background: white;">
+                <img src="pic/LogoDiag.svg" alt="Diagnoson logo" style="height: 100%; width: auto; object-fit: cover; object-position: center left; display: block;" loading="lazy">
+            </a>
+
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#inicio" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="#nosotros" class="hover:text-blue-600 transition">Nosotros</a>
+                <a href="#servicios" class="hover:text-blue-600 transition">Servicios</a>
+                <a href="#contacto" class="hover:text-blue-600 transition">Contacto</a>
+            </div>
+
+            <button class="hamburger md:hidden p-2 rounded-md" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button> 
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#inicio" class="block py-2 hover:bg-slate-50">Inicio</a>
+                <a href="#nosotros" class="block py-2 hover:bg-slate-50">Nosotros</a>
+                <a href="#servicios" class="block py-2 hover:bg-slate-50">Servicios</a>
+                <a href="#contacto" class="block py-2 hover:bg-slate-50">Contacto</a>
+            </div>
+        </div>
+    </nav> 
+
+    <header id="inicio" class="relative">
+        <div class="overflow-hidden relative h-96 md:h-[560px] bg-gray-100">
+            <div class="carousel-slides h-full relative">
+                <div class="slide absolute inset-0 transition-opacity duration-700 opacity-100">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600" alt="Instalaciones" class="w-full h-full object-cover object-center" loading="lazy">
+                    <div class="absolute inset-0 h-full flex items-center justify-center bg-black/40">
+                        <div class="text-center text-white max-w-3xl px-4">
+                            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Centro de Diagnóstico Médico Diagnoson</h2>
+                            <p class="mb-6">Tecnología avanzada y precisión para tu salud.</p>
+                            <a href="#contacto" class="btn-diagnoson btn-feature">Agendar Cita</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide absolute inset-0 transition-opacity duration-700 opacity-0">
+                    <img src="pic/ImgHori.png" alt="Servicio Profesional" class="w-full h-full object-cover object-center" loading="lazy">
+                    <div class="absolute inset-0 h-full flex items-end justify-center bg-black/40 pb-8 md:pb-16">
+                        <div class="text-center text-white max-w-3xl px-4">
+                            <a href="#nosotros" class="btn-diagnoson btn-feature">Conócenos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide absolute inset-0 transition-opacity duration-700 opacity-0">
+                    <img src="https://images.unsplash.com/photo-1580281657521-2c1d7bb9b6ff?auto=format&fit=crop&q=80&w=1600" alt="Resultados" class="w-full h-full object-cover object-center" loading="lazy">
+                    <div class="absolute inset-0 h-full flex items-center justify-center bg-black/40">
+                        <div class="text-center text-white max-w-3xl px-4">
+                            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Resultados Confiables</h2>
+                            <p class="mb-6">Informe rápido y seguro de tus pruebas.</p>
+                            <a href="#servicios" class="btn-diagnoson">Nuestros Servicios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 text-gray-800 rounded-full p-3 shadow-md focus:outline-none" aria-label="Anterior">‹</button>
+            <button type="button" class="next absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 text-gray-800 rounded-full p-3 shadow-md focus:outline-none" aria-label="Siguiente">›</button>
+            <div class="indicators absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2"></div>
+        </div>
+    </header>
+
+    <div class="benefits-wrapper">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="benefit-item">
+                <i class="fas fa-clock benefit-icon"></i>
+                <h4 class="benefit-title">Atención de 7:00 a 14:00 hrs</h4>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-user-md benefit-icon"></i>
+                <h4 class="benefit-title">Especialistas</h4>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-microscope benefit-icon"></i>
+                <h4 class="benefit-title">Alta Tecnología</h4>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-certificate benefit-icon"></i>
+                <h4 class="benefit-title">Certificados</h4>
+            </div>
+        </div>
+    </div>
+
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -bottom-4 -right-4 w-full h-full rounded-lg -z-10" style="background-color: #ebf0ff;"></div>
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" class="rounded-lg shadow-xl object-cover h-96 w-full" loading="lazy" alt="Nuestras instalaciones">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-6" style="color: var(--azul-principal);">Comprometidos con tu Bienestar</h2>
+                <p class="text-lg text-gray-600 mb-6">Ofrecemos diagnósticos con la mayor precisión, combinando calidez humana y tecnología de punta.</p>
+                <ul class="space-y-4">
+                    <li class="flex items-center"><i class="fas fa-check-circle mr-3 text-blue-600"></i> Resultados exactos y certificados.</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle mr-3 text-blue-600"></i> Atención personalizada.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12" style="color: var(--azul-principal);">Nuestras Especialidades</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3 class="font-bold">Cardiología</h3>
+                </div>
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="font-bold">Neurología</h3>
+                </div>
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-x-ray"></i></div>
+                    <h3 class="font-bold">Radiología</h3>
+                </div>
+                <div class="dept-card">
+                    <div class="dept-icon"><i class="fas fa-vial"></i></div>
+                    <h3 class="font-bold">Laboratorio</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="section-title mb-8">Recorrido por nuestras instalaciones</h2>
+            <div class="video-container shadow-2xl">
+                <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F17oeyuP85Y%2F" title="Video Diagnoson" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div>
+                    <span class="section-subtitle">Contacto</span>
+                    <h2 class="section-title mb-6">Estamos para ayudarte</h2>
+                    <p class="section-desc">¿Tienes dudas sobre nuestros estudios o necesitas agendar una cita?</p>
+                    <div class="space-y-6 mt-8">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-blue-600"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">Teléfono</h4>
+                                <p class="text-gray-600">+123 456 7890</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="bg-blue-100 p-3 rounded-full text-blue-600"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">Email</h4>
+                                <p class="text-gray-600">contacto@diagnoson.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+                    <form id="form-contacto" method="POST" action="https://formspree.io/f/mojlgwka" autocomplete="off">
+                        <div class="grid grid-cols-1 gap-6">
+                            <input type="hidden" name="_subject" value="Nueva consulta desde la Web Diagnoson">
+                            <div>
+                                <label class="block text-sm font-bold text-blue-900 mb-2">Nombre Completo</label>
+                                <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-blue-900 mb-2">Correo Electrónico</label>
+                                <input type="email" name="_replyto" required class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-blue-900 mb-2">Servicio</label>
+                                <select name="service" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none transition-all">
+                                    <option value="laboratorio">Laboratorio Clínico</option>
+                                    <option value="rayos-x">Rayos X</option>
+                                    <option value="ultrasonido">Ultasonido</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-blue-900 mb-2">Mensaje</label>
+                                <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none transition-all"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full justify-center">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-gray-500 bg-white border-t">
+        <p>&copy; 2026 Diagnoson. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/code.js"></script>
+</body>
+</html>
