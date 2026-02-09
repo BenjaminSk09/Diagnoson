@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let current = 0;
     let interval = null;
 
-    // Validar que existe el carousel
+  
+// Validate that the carousel exists
     if (!slides.length || !indicatorsContainer || !prevBtn || !nextBtn) return;
 
-    // Construir indicadores
+    // Build indicators
     slides.forEach((slide, index) => {
         slide.setAttribute('role', 'group');
         slide.setAttribute('aria-roledescription', 'slide');
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         indicatorsContainer.appendChild(btn);
     });
 
-    // Actualizar estado visual
+    // Update visual status
     function update() {
         slides.forEach((slide, index) => {
             slide.setAttribute('aria-hidden', index === current ? 'false' : 'true');
@@ -35,17 +36,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Navegar a un slide específico
+    // Navigate to a specific slide
     function goTo(index) {
         current = (index + slides.length) % slides.length;
         update();
     }
 
-    // Event listeners para navegación manual
+  // Event listeners for manual navigation
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
 
-    // Auto-play del carousel
+    // Auto-play TO carousel
     const AUTO_DELAY = 7000;
 
     function startAuto() {
