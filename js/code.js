@@ -80,57 +80,74 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoContainer = document.getElementById('video-container');
 
     if (videoContainer) {
+        // 1. Lista de videos
         const vids = [
-            'pic/VideoDiag.mp4', 
-            'pic/VideoDiag1.mp4', 
+            'pic/VideoDiag.mp4',
             'pic/VideoDiag2.mp4', 
             'pic/VideoDiag3.mp4', 
-            'pic/VideoDiag4.mp4',
+            'pic/VideoDiag4.mp4', 
             'pic/VideoDiag5.mp4'
         ];
 
+        // 2. Mezcla aleatoria
         const shuffledVids = vids.sort(() => Math.random() - 0.5);
         let currentIndex = 0;
+        let userInteracted = false; // Variable para saber si ya podemos usar sonido
 
         const video = document.createElement('video');
         video.playsInline = true;
-        video.loop = false;
-        video.muted = true; // Obligatorio para que inicie solo al hacer scroll
+        video.muted = true; // Inicia muteado para que el navegador no lo bloquee
         video.volume = 0.2; // Tu volumen bajo solicitado
         video.classList.add('w-full', 'h-full', 'object-cover'); 
         video.src = shuffledVids[currentIndex];
 
-        // --- LÓGICA DE SONIDO INTELIGENTE ---
-        // Intentar activar sonido al primer clic en cualquier parte de la página
+        // --- LÓGICA DE SONIDO ---
         const enableSound = () => {
             video.muted = false;
-            // Una vez activado, eliminamos el listener para no repetir
+            userInteracted = true;
             document.removeEventListener('click', enableSound);
+            document.removeEventListener('touchstart', enableSound);
         };
-        document.addEventListener('click', enableSound);
 
-        // Alternar mute con clic directo en el video (como ya te gustaba)
+        // Activamos sonido al primer clic o toque en el celular
+        document.addEventListener('click', enableSound);
+        document.addEventListener('touchstart', enableSound);
+
         video.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita conflicto con el listener global
+            e.stopPropagation();
             video.muted = !video.muted;
         });
-        // ------------------------------------
 
+        // 3. Cambio de video automático
         video.onended = () => {
             currentIndex = (currentIndex + 1) % shuffledVids.length;
             video.src = shuffledVids[currentIndex];
+            
+            // Si el usuario ya interactuó, el siguiente video sale con sonido
+            if (userInteracted) {
+                video.muted = false;
+            }
             video.play();
         };
 
+        // 4. Reproducción al hacer scroll (Intersection Observer)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    video.play().catch(error => console.log("Play prevenido"));
+                    // Intentar reproducir
+                    const promise = video.play();
+                    if (promise !== undefined) {
+                        promise.catch(() => {
+                            // Si falla por el sonido, lo silenciamos y reintentamos
+                            video.muted = true;
+                            video.play();
+                        });
+                    }
                 } else {
                     video.pause();
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.2 }); // Se activa cuando el 20% es visible
 
         videoContainer.appendChild(video);
         observer.observe(videoContainer);
