@@ -29,8 +29,8 @@
                 <a href="#inicio" class="hover:text-blue-600 transition">Inicio</a>
                 <a href="#nosotros" class="hover:text-blue-600 transition">Nosotros</a>
                 <a href="#servicios" class="hover:text-blue-600 transition">Servicios</a>
-                <a href="#contacto" class="hover:text-blue-600 transition">Contacto</a>
                 <a href="#ubicacion" class="hover:text-blue-600 transition">Ubicación</a>
+                <a href="#contacto" class="hover:text-blue-600 transition">Contacto</a>
             </div>
 
             <button class="hamburger md:hidden p-2 rounded-md" aria-label="Abrir menú" aria-controls="mobile-menu"
@@ -44,7 +44,8 @@
                 <a href="#inicio" class="block py-2 hover:bg-slate-50">Inicio</a>
                 <a href="#nosotros" class="block py-2 hover:bg-slate-50">Nosotros</a>
                 <a href="#servicios" class="block py-2 hover:bg-slate-50">Servicios</a>
-                <a href="#contacto" class="block py-2 hover:bg-slate-50">Contacto</a>
+                <a href="#ubicacion" class="hover:text-blue-600 transition">Ubicación</a>
+                <a href="#contacto" class="hover:text-blue-600 transition">Contacto</a>
             </div>
         </div>
     </nav>
@@ -203,16 +204,44 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <h2 class="section-title mb-8">Recorrido por nuestras instalaciones</h2>
-            <div class="video-container shadow-2xl">
-                <iframe
-                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F17oeyuP85Y%2F"
-                    title="Video Diagnoson" loading="lazy" allowfullscreen></iframe>
+   <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="flex justify-center md:justify-end">
+                <div id="video-container" class="video-vertical-wrapper shadow-2xl">
+                    </div>
             </div>
+
+            <div class="text-left">
+                <span class="section-subtitle">Instalaciones</span>
+                <h2 class="text-3xl font-bold text-blue-900 mb-6">Conoce tu próximo centro de diagnóstico</h2>
+                <p class="text-gray-600 mb-6 text-lg">
+                    En Diagnoson, nos esforzamos por ofrecerte un ambiente moderno, limpio y profesional. 
+                    Nuestro equipo está listo para brindarte la mejor atención con tecnología de vanguardia.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                        <p class="text-gray-700 font-medium">Equipos de última generación para resultados precisos.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                        <p class="text-gray-700 font-medium">Ambientes cómodos y seguros para todos nuestros pacientes.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-blue-600 mt-1"></i>
+                        <p class="text-gray-700 font-medium">Protocolos de higiene estrictos en cada área.</p>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <a href="https://wa.me/50241564055?text=Hola,%20deseo%20agendar%20una%20cita%20en%20Diagnoson" class="btn-diagnoson">¡Agenda tu visita hoy en whatsapp!</a>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
 
     <section id="ubicacion" class="py-16 bg-gray-50">
@@ -323,7 +352,7 @@
 
 
 
-    <footer class="py-8 text-center text-gray-500 bg-white border-t">
+    <footer class="py-8 text-center text-gray-500 bg-white border-t ">
         <div class="max-w-7xl mx-auto px-4 text-center">
 
             <div class="flex justify-center gap-6 mb-8">
@@ -338,14 +367,14 @@
 
             <p class="text-gray-400 text-sm">Diagnoson S.A.</p>
         </div>
-    </footer> 
+    </footer>
 
     <script src="js/nav.js"></script>
     <script src="js/code.js"></script>
 
     <a href="https://wa.me/50241564055?text=Hola,%20deseo%20agendar%20una%20cita%20en%20Diagnoson"
         class="fixed bottom-6 right-6 bg-[#25d366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-[100]"
-        target="_blank" aria-label="Contactar por WhatsApp">s
+        target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
     </a>

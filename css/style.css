@@ -370,6 +370,13 @@ h1, h2, h3, h4, h5, h6 {
 
 nav {
     font-family: 'Plus Jakarta Sans', sans-serif;
+    background: rgba(255, 255, 255, 0.8) !important; /* Blanco con transparencia */
+    backdrop-filter: blur(10px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav h1 {
@@ -427,5 +434,40 @@ p, ul li {
     .max-w-7xl {
         padding-left: 0.75rem;
         padding-right: 0.75rem;
+    }
+}
+
+/* Ajuste global para que el scroll no quede tapado por el Navbar */
+section[id] {
+    scroll-margin-top: 85px; /* Ajusta este número según la altura de tu menú */
+}
+
+/* Opcional: Si quieres un scroll suave en lugar de un salto brusco */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Contenedor específico para videos verticales (Reels/TikTok style) */
+.video-vertical-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px; /* Reducimos un pelín el ancho para que armonice con el texto */
+    aspect-ratio: 9 / 16;
+    background: #000;
+    border-radius: 2.5rem; /* Bordes más redondeados estilo celular moderno */
+    overflow: hidden;
+    border: 10px solid var(--azul-900);
+}
+
+.video-vertical-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ajuste para móviles muy pequeños */
+@media (max-width: 480px) {
+    .video-vertical-wrapper {
+        max-width: 280px;
     }
 }
