@@ -1,0 +1,168 @@
+/* IMPORTACIÓN DE FUENTE */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --azul-900: #0b254b;
+    --azul-principal: #1f3c88;
+    --azul-50: #f5f7fa;
+    --blanco: #ffffff;
+    --sombra-md: 0 12px 28px rgba(11, 37, 75, 0.12);
+}
+
+/* ESTILOS BASE (Mantenidos para Nav/Footer) */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--azul-50);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ESTILOS DEL NAV (Basado en tu código original) */
+nav {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.hamburger.active i {
+    color: var(--azul-principal);
+    transform: rotate(90deg);
+}
+
+/* NUEVA SECCIÓN: TARJETAS DE ESPECIALISTAS */
+.especialistas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 4rem 1rem;
+}
+
+.card-especialista {
+    background: var(--blanco);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: var(--sombra-md);
+    transition: transform 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-especialista:hover {
+    transform: translateY(-10px);
+}
+
+.img-container {
+    width: 100%;
+    height: 300px;
+    background: #e2e8f0; /* Color de carga si no hay foto */
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-especialista {
+    padding: 1.5rem;
+}
+
+.especialidad-tag {
+    color: var(--azul-principal);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.nombre-especialista {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--azul-900);
+    margin-bottom: 0.5rem;
+}
+
+.btn-cita {
+    background-color: var(--azul-principal);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-cita:hover {
+    background-color: var(--azul-900);
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid #e2e8f0;
+}
+
+
+.card-especialista {
+    width: 100%;
+    max-width: 280px;
+}
+
+
+.card-especialista:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.img-container {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-especialista {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.especialidad-tag {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.nombre-especialista {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #0b254b;
+}
+
+.btn-cita {
+    display: inline-block;
+    margin-top: 12px;
+    background-color: #0b254b;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 999px;
+    transition: background 0.3s ease;
+}
+
+.btn-cita:hover {
+    background-color: #163d74;
+}

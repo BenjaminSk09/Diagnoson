@@ -8,10 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let interval = null;
 
 
-    // Validate that the carousel exists
     if (!slides.length || !indicatorsContainer || !prevBtn || !nextBtn) return;
 
-    // Build indicators
     slides.forEach((slide, index) => {
         slide.setAttribute('role', 'group');
         slide.setAttribute('aria-roledescription', 'slide');
@@ -24,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         indicatorsContainer.appendChild(btn);
     });
 
-    // Update visual status
+    
     function update() {
         slides.forEach((slide, index) => {
             slide.setAttribute('aria-hidden', index === current ? 'false' : 'true');
@@ -36,17 +34,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Navigate to a specific slide
+  
     function goTo(index) {
         current = (index + slides.length) % slides.length;
         update();
     }
 
-    // Event listeners for manual navigation
+   
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
 
-    // Auto-play TO carousel
+  
     const AUTO_DELAY = 7000;
 
     function startAuto() {
@@ -96,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const video = document.createElement('video');
         video.playsInline = true;
-        video.muted = true; // Inicia muteado para que el navegador no lo bloquee
-        video.volume = 0.2; // Tu volumen bajo solicitado
+        video.muted = true; // El video inicia muted x politicas de el navegador
+        video.volume = 0.2; // VOLUMEN OJO
         video.classList.add('w-full', 'h-full', 'object-cover'); 
         video.src = shuffledVids[currentIndex];
 
@@ -109,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.removeEventListener('touchstart', enableSound);
         };
 
-        // Activamos sonido al primer clic o toque en el celular
+        //sonido al primer clic o toque en el celular
         document.addEventListener('click', enableSound);
         document.addEventListener('touchstart', enableSound);
 
@@ -138,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const promise = video.play();
                     if (promise !== undefined) {
                         promise.catch(() => {
-                            // Si falla por el sonido, lo silenciamos y reintentamos
+                            // Si falla por el sonido, silencia y reintenta.
                             video.muted = true;
                             video.play();
                         });

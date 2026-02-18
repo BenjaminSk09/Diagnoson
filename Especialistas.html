@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnoson - Centro Médico</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/especialistas.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Principal">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center transition-transform hover:scale-105">
+                <img src="pic/LogoDiag.svg" alt="Diagnoson logo" class="h-12 md:h-16 w-auto object-contain"
+                    loading="lazy">
+            </a>
+
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-blue-600 transition">Inicio</a>
+                <a href="index.html#nosotros" class="hover:text-blue-600 transition">Nosotros</a>
+                <a href="index.html#servicios" class="hover:text-blue-600 transition">Servicios</a>
+                <a href="index.html#ubicacion" class="hover:text-blue-600 transition">Ubicación</a>
+                <a href="index.html#contacto" class="hover:text-blue-600 transition">Contacto</a>
+            </div>
+
+            <button class="hamburger md:hidden p-2 rounded-md" aria-label="Abrir menú" aria-controls="mobile-menu"
+                aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden border-t">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="index.html" class="block py-2 hover:bg-slate-50">Inicio</a>
+                <a href="index.html#nosotros" class="block py-2 hover:bg-slate-50">Nosotros</a>
+                <a href="index.html#servicios" class="block py-2 hover:bg-slate-50">Servicios</a>
+                <a href="index.html#ubicacion" class="block py-2 hover:bg-slate-50">Ubicación</a>
+                <a href="index.html#contacto" class="block py-2 hover:bg-slate-50">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-[#0b254b] mb-4">Nuestros Especialistas</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Contamos con un equipo médico altamente calificado para brindarte
+                la mejor atención y diagnósticos precisos.</p>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 max-w-7xl mx-auto">
+
+                <article class="card-especialista">
+                    <div class="img-container">
+                        <img src="pic/doctor2.jpg" alt="Dra. María Carranza">
+                    </div>
+                    <div class="info-especialista">
+                        <span class="especialidad-tag">Medico General</span>
+                        <h3 class="nombre-especialista">María Isabel Carranza Reyes</h3>
+                        <p class="text-gray-500 text-sm">Especialista en atención médica integral, prevención y
+                            diagnóstico oportuno para el cuidado general de tu salud.</p>
+                        <a href="https://wa.me/50241564055" class="btn-cita">Agendar Cita</a>
+                    </div>
+                </article>
+
+                <article class="card-especialista">
+                    <div class="img-container">
+                        <img src="pic/Eric Marroquin.jpg" alt="Dr. Eric Marroquín">
+                    </div>
+                    <div class="info-especialista">
+                        <span class="especialidad-tag">internista y gastroenterólogo</span>
+                        <h3 class="nombre-especialista">Eric Noé Marroquín Mendieta</h3>
+                        <p class="text-gray-500 text-sm">Especialista en Medicina Interna y Gastroenterología, enfocado
+                            en el diagnóstico y tratamiento integral de enfermedades en adultos, con especial atención a
+                            los trastornos del sistema digestivo.</p>
+                        <a href="https://wa.me/50241564055" class="btn-cita">Agendar Cita</a>
+                    </div>
+                </article>
+
+                <article class="card-especialista">
+                    <div class="img-container">
+                        <img src="pic/Juan Marroquin.jpg" alt="Dr. Juan Marroquín">
+                    </div>
+                    <div class="info-especialista">
+                        <span class="especialidad-tag">Médico radiólogo</span>
+                        <h3 class="nombre-especialista">Juan Emilio Marroquín Mendieta</h3>
+                        <p class="text-gray-500 text-sm">Especialista en radiología, encargado de realizar e interpretar
+                            estudios de imagen como rayos X y ultrasonidos para apoyar el diagnóstico médico de manera
+                            precisa y confiable.</p>
+                        <a href="https://wa.me/50241564055" class="btn-cita">Agendar Cita</a>
+                    </div>
+                </article>
+
+                <article class="card-especialista">
+                    <div class="img-container">
+                        <img src="pic/Elena Marroquin.jpg" alt="Dra. Elena Zamora">
+                    </div>
+                    <div class="info-especialista">
+                        <span class="especialidad-tag">Química bióloga</span>
+                        <h3 class="nombre-especialista">Elena María Zamora Marroquín</h3>
+                        <p class="text-gray-500 text-sm">Especialista en Química Biológica, responsable de la
+                            realización y supervisión de estudios de laboratorio que apoyan el diagnóstico y seguimiento
+                            médico.</p>
+                        <a href="https://wa.me/50241564055" class="btn-cita">Agendar Cita</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center text-gray-500 bg-white border-t mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="https://www.facebook.com/DIAGNOSON" target="_blank"
+                    class="text-slate-400 hover:text-blue-600 text-2xl transition"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/diagnosongt/" target="_blank"
+                    class="text-slate-400 hover:text-pink-600 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/50241564055" target="_blank"
+                    class="text-slate-400 hover:text-green-500 text-2xl transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-gray-400 text-sm">© 2024 Diagnoson S.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/50241564055?text=Hola,%20deseo%20agendar%20una%20cita%20en%20Diagnoson"
+        class="fixed bottom-6 right-6 bg-[#25d366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-[100]"
+        target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script src="js/nav.js"></script>
+    <script src="js/code.js"></script>
+</body>
+
+</html>
