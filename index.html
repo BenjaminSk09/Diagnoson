@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="stylesheet" href="css/style.css">
@@ -109,10 +110,10 @@
                     Sabados de 7:00 a 12:00 hrs
                 </h4>
             </div>
-            <div class="benefit-item">
+            <a href="/Especialistas.html" class="benefit-item">
                 <i class="fas fa-user-md benefit-icon"></i>
                 <h4 class="benefit-title">Especialistas</h4>
-            </div>
+            </a>
             <div class="benefit-item">
                 <i class="fas fa-microscope benefit-icon"></i>
                 <h4 class="benefit-title">Alta Tecnología</h4>
@@ -318,7 +319,7 @@
                     </div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
-                    <form id="form-contacto" method="POST" action="https://formspree.io/f/mykdkepd" autocomplete="off">
+                    <form id="form-contacto" autocomplete="off">
                         <div class="grid grid-cols-1 gap-6">
                             <input type="hidden" name="_subject" value="Nueva consulta desde la Web Diagnoson">
                             <div>
@@ -350,11 +351,11 @@
                                 </select>
                             </div>
                             <div>
-                               <label class="block text-sm font-bold text-blue-900 mb-2">Especialista</label>
-                               <select name="specialist"
+                                <label class="block text-sm font-bold text-blue-900 mb-2">Especialista</label>
+                                <select name="specialist"
                                     class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none transition-all">
                                     <option value="tomografia">Medico General</option>
-                                    <option value="laboratorio">internista y gastroenterólogo</option>
+                                    <option value="laboratorio">Medico internista y gastroenterólogo</option>
                                     <option value="rayos-x">Médico radiólogo</option>
                                     <option value="mamografia">Química bióloga</option>
                                 </select>
