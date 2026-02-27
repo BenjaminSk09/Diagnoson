@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!formulario) return;
 
     const CONFIG = {
-        telefono: "50232103185",
+        telefono: "50241564055",
         colorPrincipal: "#1f3c88"
     };
 
