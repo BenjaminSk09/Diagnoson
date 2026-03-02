@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Para reenviar a wsp
 
-// Reemplaza la sección del formulario en tu code.js con este bloque final:
+//:
 
 const formulario = document.getElementById('form-contacto');
 if (formulario) {
