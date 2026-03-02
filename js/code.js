@@ -155,54 +155,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Para reenviar a wsp
 
-document.addEventListener('DOMContentLoaded', function() {
-    const formulario = document.getElementById('form-contacto');
-    if (!formulario) return;
+// Reemplaza la sección del formulario en tu code.js con este bloque final:
 
+const formulario = document.getElementById('form-contacto');
+if (formulario) {
     const CONFIG = {
-        telefono: "50241564055",
+        telefono: "50232103185",
         colorPrincipal: "#1f3c88"
     };
 
-    // Usamos saltos de línea explícitos para que WhatsApp los reconozca
     const construirMensaje = (datos) => {
-        let mensaje = "🏥 *NUEVA CONSULTA WEB - DIAGNOSON*\n";
-        mensaje += "------------------------------------------\n\n";
+        // Usamos variables claras y emojis directos
+        let mensaje = "🏥 *NUEVA SOLICITUD WEB - DIAGNOSON*\n";
+        mensaje += "━━━━━━━━━━━━━━━━━━━━\n\n";
         mensaje += "👤 *Paciente:* " + datos.nombre + "\n";
-        mensaje += "📧 *Correo:* " + datos.correo + "\n";
-        mensaje += "🩺 *Servicio:* " + datos.servicio + "\n";
-        mensaje += "👨‍⚕️ *Especialista:* " + datos.especialista + "\n\n";
-        mensaje += "------------------------------------------\n";
-        mensaje += "📝 *Mensaje:* \n" + datos.mensaje;
+        mensaje += "📌 *Asunto:* " + datos.tramite + "\n\n";
+        mensaje += "💬 *Mensaje:* \n" + datos.mensaje + "\n\n";
+        mensaje += "━━━━━━━━━━━━━━━━━━━━";
         return mensaje;
     };
 
     formulario.addEventListener('submit', function(e) {
         e.preventDefault();
-
+        
+        const formData = new FormData(formulario);
         const datos = {
-            nombre: new FormData(formulario).get('name'),
-            correo: new FormData(formulario).get('_replyto'),
-            servicio: formulario.querySelector('select[name="service"] option:checked').text,
-            especialista: formulario.querySelector('select[name="specialist"] option:checked').text,
-            mensaje: new FormData(formulario).get('message')
+            nombre: formData.get('name'),
+            tramite: formData.get('tipo_tramite'),
+            mensaje: formData.get('message')
         };
 
-        const mensajeFinal = construirMensaje(datos);
-
         Swal.fire({
-            title: `¡Listo, ${datos.nombre}!`,
-            text: 'Haz clic para abrir el chat de Diagnoson.',
+            title: '¡Solicitud lista!',
+            text: 'Presiona el botón para enviarla por WhatsApp.',
             icon: 'success',
-            confirmButtonText: '<i class="fab fa-whatsapp"></i> Abrir WhatsApp',
-            confirmButtonColor: CONFIG.colorPrincipal,
-            showClass: { popup: 'animate__animated animate__zoomIn' }
+            confirmButtonText: '<i class="fab fa-whatsapp"></i> Enviar ahora',
+            confirmButtonColor: CONFIG.colorPrincipal
         }).then((result) => {
             if (result.isConfirmed) {
-                // Usamos encodeURIComponent para que los emojis y saltos de línea viajen seguros
+                // api.whatsapp.com es más robusto para enviar caracteres especiales como emojis
+                const mensajeFinal = construirMensaje(datos);
                 const url = `https://api.whatsapp.com/send?phone=${CONFIG.telefono}&text=${encodeURIComponent(mensajeFinal)}`;
                 window.open(url, '_blank');
             }
         });
     });
-});
+}
