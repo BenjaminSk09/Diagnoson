@@ -171,7 +171,6 @@ if (formulario) {
         mensaje += "👤 *Paciente:* " + datos.nombre + "\n";
         mensaje += "📌 *Asunto:* " + datos.tramite + "\n\n";
         mensaje += "💬 *Mensaje:* \n" + datos.mensaje + "\n\n";
-        mensaje += "━━━━━━━━━━━━━━━━━━━━";
         return mensaje;
     };
 
