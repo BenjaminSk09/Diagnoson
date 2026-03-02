@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const formulario = document.getElementById('form-contacto');
 if (formulario) {
     const CONFIG = {
-        telefono: "50232103185",
+        telefono: "50241564055",
         colorPrincipal: "#1f3c88"
     };
 
